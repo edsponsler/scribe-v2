@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# EXAMPLE Configuration for the SCRIBE v2 Project
+#
+# --- Instructions ---
+# 1. Copy this file to a new file named 'gcenv.sh'
+#    cp gcenv.sh.example gcenv.sh
+#
+# 2. Edit 'gcenv.sh' and replace the placeholder values with your specific details.
+#
+# 3. Add 'gcenv.sh' to your .gitignore file to keep your credentials private.
+#
+# 4. Load the variables into your terminal before running other scripts:
+#    source gcenv.sh
+#
+
+# --- Project Configuration ---
+# Your unique Google Cloud Project ID.
+export GOOGLE_CLOUD_PROJECT="your-gcp-project-id"
+
+# --- Location Configuration ---
+# The default region for your GCP services.
+export GOOGLE_CLOUD_REGION="your-gcp-region" # e.g., us-central1
+# A default zone within the region.
+export GOOGLE_CLOUD_ZONE="your-gcp-zone" # e.g., us-central1-a
+
+# --- Service-Specific Configuration ---
+# The GCS bucket for the main corpus.
+export GCS_BUCKET_NAME="your-gcs-bucket-name"
+
+# The Firestore collection used by firestore_tracker.py
+export FIRESTORE_COLLECTION_NAME="processed_files_tracker"
+
+gcloud auth application-default set-quota-project $GOOGLE_CLOUD_PROJECT
+gcloud config set project $GOOGLE_CLOUD_PROJECT
+
+# --- Confirmation ---
+# Let the user know the environment is set.
+echo "SCRIBE v2 environment variables set."
+echo "Project: $GOOGLE_CLOUD_PROJECT"
+echo "Region:  $GOOGLE_CLOUD_REGION"
+echo "Bucket:  $GCS_BUCKET_NAME"
+echo "Firestore: $FIRESTORE_COLLECTION_NAME"
