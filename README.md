@@ -170,6 +170,30 @@ For more detailed installation instructions and advanced usage, visit the offici
 
 https://github.com/google-gemini/gemini-cli
 
+## Using Gemini CLI with ADK Context for Project Development
+
+This project includes a file named `llms-full.txt`, which contains comprehensive documentation for the Google Agent Development Kit (ADK). You can use this file to provide rich context to the Gemini CLI, enabling it to assist you in developing new agents that extend this project's capabilities.
+
+By passing this file as context, you can ask Gemini to generate code, create project plans, and even act as a mentor, all with a deep understanding of the ADK framework.
+
+### Example 1: Generating a Project Outline
+
+Use the following prompt to ask Gemini to create a project outline for enhancing Gemini CLI integration for the Scribe V2 project. 
+
+```bash
+gemini -f llms-full.txt "Create a project outline for enhancing the Gemini CLI integration for the Scribe V2 project. The goal is to assist users in creating new processor scripts and debugging existing ones using the Google ADK. The outline should include steps for designing specific prompts for code generation, creating workflows for debugging processor scripts, using the ADK to create agents that assist in the processor creation and debugging process, and providing clear instructions for users on how to use the enhanced integration. Consider using the 'llms-full.txt' file in the project as context for generating the prompts and workflows. The outline should also cover the use of Gemini CLI to create sample processor scripts from scratch, given a description of the text format to be processed."
+```
+
+### Example 2: Step-by-Step Mentorship
+
+After generating an outline, you can ask Gemini to guide you through the implementation.
+
+```bash
+gemini -f llms-full.txt "Act as my mentor. Using the project outline we just created, walk me through a step by step tutorial to implement the project using the Google ADK. Explain each part of the ADK code as we build it. Pause after each step and ask if I am ready to continue."
+```
+
+https://github.com/google-gemini/gemini-cli
+
 ## Understanding Authentication and Billing in this Project
 
 I will use the following fake accounts for the following discussion:
@@ -207,27 +231,3 @@ For a user to perform administrative tasks with the `gcloud` CLI, such as creati
 ### Credential Lifetime
 
 The Application Default Credentials you create are long-lived. They use a short-lived (1 hour) access token that is automatically and seamlessly refreshed by the client libraries using a secure, long-lived refresh token. This means you do not need to re-authenticate every hour. The credentials remain valid until they are explicitly revoked.
-
-## Using Gemini CLI with ADK Context for Project Development
-
-This project includes a file named `llms-full.txt`, which contains comprehensive documentation for the Google Agent Development Kit (ADK). You can use this file to provide rich context to the Gemini CLI, enabling it to assist you in developing new agents that extend this project's capabilities.
-
-By passing this file as context, you can ask Gemini to generate code, create project plans, and even act as a mentor, all with a deep understanding of the ADK framework.
-
-### Example 1: Generating a Project Outline
-
-Use the following prompt to ask Gemini to create a project outline for enhancing Gemini CLI integration for the Scribe V2 project. 
-
-```bash
-gemini -f llms-full.txt "Create a project outline for enhancing the Gemini CLI integration for the Scribe V2 project. The goal is to assist users in creating new processor scripts and debugging existing ones using the Google ADK. The outline should include steps for designing specific prompts for code generation, creating workflows for debugging processor scripts, using the ADK to create agents that assist in the processor creation and debugging process, and providing clear instructions for users on how to use the enhanced integration. Consider using the 'llms-full.txt' file in the project as context for generating the prompts and workflows. The outline should also cover the use of Gemini CLI to create sample processor scripts from scratch, given a description of the text format to be processed."
-```
-
-### Example 2: Step-by-Step Mentorship
-
-After generating an outline, you can ask Gemini to guide you through the implementation.
-
-```bash
-gemini -f llms-full.txt "Act as my mentor. Using the project outline we just created, walk me through a step by step tutorial to implement the project using the Google ADK. Explain each part of the ADK code as we build it. Pause after each step and ask if I am ready to continue."
-```
-
-https://github.com/google-gemini/gemini-cli
