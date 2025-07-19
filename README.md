@@ -216,10 +216,10 @@ By passing this file as context, you can ask Gemini to generate code, create pro
 
 ### Example 1: Generating a Project Outline
 
-Use the following prompt to ask Gemini to create a project outline for developing agents to analyze the current project and offer guidence for next steps. 
+Use the following prompt to ask Gemini to create a project outline for enhancing Gemini CLI integration for the Scribe V2 project. 
 
 ```bash
-gemini -f llms-full.txt "Based on the provided ADK documentation, create a project outline for developing a group of agents that can analyze my current project, summarize its capabilities, identify next steps in its development, and suggest new features. The agents will then consdier all of the ideas and pick one activity in each of the following categories: improvement, development, or new feature. The agents will then construct three prompts, one for each activity category, to ask Gemini CLI to create a project outline for the activity. The final report will consist of a summary of the project's current capabilities and development status, a summary of each of the three activities chosen for the project, followed by the three prompts, one for each activity.
+gemini -f llms-full.txt "Create a project outline for enhancing the Gemini CLI integration for the Scribe V2 project. The goal is to assist users in creating new processor scripts and debugging existing ones using the Google ADK. The outline should include steps for designing specific prompts for code generation, creating workflows for debugging processor scripts, using the ADK to create agents that assist in the processor creation and debugging process, and providing clear instructions for users on how to use the enhanced integration. Consider using the 'llms-full.txt' file in the project as context for generating the prompts and workflows. The outline should also cover the use of Gemini CLI to create sample processor scripts from scratch, given a description of the text format to be processed."
 ```
 
 ### Example 2: Step-by-Step Mentorship
@@ -227,7 +227,7 @@ gemini -f llms-full.txt "Based on the provided ADK documentation, create a proje
 After generating an outline, you can ask Gemini to guide you through the implementation.
 
 ```bash
-gemini -f llms-full.txt "Act as my mentor. Using the project outline we just created, walk me through a step by step tutorial to implement the multi-agent system using the Google ADK. Explain each part of the ADK code as we build it. Pause after each step and ask if I am ready to continue."
+gemini -f llms-full.txt "Act as my mentor. Using the project outline we just created, walk me through a step by step tutorial to implement the project using the Google ADK. Explain each part of the ADK code as we build it. Pause after each step and ask if I am ready to continue."
 ```
 
 https://github.com/google-gemini/gemini-cli
