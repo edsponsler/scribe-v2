@@ -3,6 +3,7 @@ import os
 # Import the specific processing functions from our scripts module
 from scripts.process_kjv import process_kjv_bible
 from scripts.process_josephus import process_josephus
+from scripts.process_philo import process_philo
 
 # Define the directories we'll be working with
 SOURCE_DIR = 'source_material'
@@ -13,8 +14,7 @@ PROCESSED_DIR = 'processed_corpus'
 PROCESSOR_MAP = {
     'pg10.txt': process_kjv_bible,
     'pg2850.txt': process_josephus,
-    # When you create a processor for Philo, you'll add it here:
-    # 'philo_on_creation.txt': process_philo,
+    'pg14657.txt': process_philo,
 }
 
 def main():
