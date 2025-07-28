@@ -4,6 +4,8 @@ import os
 from scripts.process_kjv import process_kjv_bible
 from scripts.process_josephus import process_josephus
 from scripts.process_philo import process_philo
+from scripts.process_augustine import process_augustine
+from scripts.process_ayer import process_ayer
 
 # Define the directories we'll be working with
 SOURCE_DIR = 'source_material'
@@ -15,6 +17,8 @@ PROCESSOR_MAP = {
     'pg10.txt': process_kjv_bible,
     'pg2850.txt': process_josephus,
     'pg14657.txt': process_philo,
+    'pg3296.txt': process_augustine,
+    'pg24979.txt': process_ayer,
 }
 
 def main():
